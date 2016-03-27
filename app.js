@@ -1,1 +1,1 @@
-require('./prototypal-inheritance');
+require('./PVOR.js');
