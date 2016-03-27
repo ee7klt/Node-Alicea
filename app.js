@@ -1,2 +1,1 @@
-var greet = require('./greet');
-greet();
+require('./prototypal-inheritance');
