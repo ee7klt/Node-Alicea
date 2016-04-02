@@ -1,5 +1,7 @@
+var greetings = require('./greetings')
+
 var greet = function() {
-    console.log('hola de españa');
+    console.log(greetings.es);
 }
 
 
