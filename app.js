@@ -1,29 +1,22 @@
-// 32. object properties and methods
+var Emitter = require('./emitter');
 
+var emtr = new Emitter();
 
-var obj = {
-    greet: 'Hello'
-}
+// i want to respond to an event 'affirm'
+// i'm calling 'affirm' an event, but its actually just a property name.
+// fake events!!
 
-console.log(obj.greet);
-console.log(obj['greet']);
-var prop = 'greet';  // not the property, but the variable that points to the string that is the property name.
-console.log(obj[prop]);
+// add responses (functions) that'll respond to the 'affirm' event.
+emtr.on('affirm', function () {
+    console.log('I am a loveable human being');
+});
 
-// functions and arrays
+emtr.on('affirm', function() {
+    console.log('What a beautiful world!');
+});
 
-var arr = [];
-// functions sitting in array (uninvoked)
-arr.push( function() {
-    console.log('hello world 1');
-})
-arr.push( function() {
-    console.log('hello world 2');
-})
-arr.push( function() {
-    console.log('hello world 3');
-})
+// the affirmation
+console.log('Good morning!');
 
-arr.forEach(function (item) {
-    item();
-})
+// Hey, an affirmation happened, go tell the listeners!
+emtr.emit('affirm');
