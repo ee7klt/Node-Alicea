@@ -1,4 +1,5 @@
 var Emitter = require('events');
+var eventConfig = require('./config').events;
 
 var emtr = new Emitter();
 
@@ -7,11 +8,11 @@ var emtr = new Emitter();
 // fake events!!
 
 // add responses (functions) that'll respond to the 'affirm' event.
-emtr.on('affirm', function () {
+emtr.on(eventConfig.AFFIRM, function () {
     console.log('I am a loveable human being');
 });
 
-emtr.on('affirm', function() {
+emtr.on(eventConfig.AFFIRM, function() {
     console.log('What a beautiful world!');
 });
 
@@ -19,4 +20,4 @@ emtr.on('affirm', function() {
 console.log('Good morning!');
 
 // Hey, an affirmation happened, go tell the listeners!
-emtr.emit('affirm');
+emtr.emit(eventConfig.AFFIRM);
