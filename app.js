@@ -1,5 +1,11 @@
-var name = 'peter pan';
-var greet = 'hello ' + name;
-var greet2 = `Hello ${name}`;
-console.log(greet);
-console.log(greet2);
+
+var obj = {
+    name: 'cuchillo',
+    greet: function(param) {
+        console.log(`Que pasa ${this.name} ${param}`); 
+    }
+}
+
+obj.greet('!');
+obj.greet.call({name: 'cucharon'},'!'); // args NOT passed in array
+obj.greet.apply({name: 'cucharon'},['!']);  //args passed in array
