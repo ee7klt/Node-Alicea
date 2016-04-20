@@ -1,0 +1,17 @@
+'use strict';
+
+class Persona {
+    constructor(nombre, apellido) {
+        this.nombre = 'Cuchillo',
+        this.apellido = 'Gonzalez'
+    }
+    
+    saludo() {
+        console.log(`Qué pasa ${this.nombre} ${this.apellido} ?`);
+    }
+}
+
+
+var cuchillo = new Persona('YibaYiba', 'Andere'); 
+cuchillo.saludo();
+console.log(cuchillo.__proto__);
