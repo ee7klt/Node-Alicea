@@ -10,4 +10,4 @@ console.log(buf[2]); // 108
 
 
 buf.write('wo');
-console.log(buf.toString());
+console.log(buf.toString());   // wollo
