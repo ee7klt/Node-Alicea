@@ -1,4 +1,5 @@
 var fs = require('fs');
+var zlib = require('zlib');
 
 // readable = readable stream
 // createReadStream
@@ -11,15 +12,20 @@ var readable = fs.createReadStream(
 
 // writable = writable stream
 //  @param: path = write path
-var writable = fs.createWriteStream(__dirname + '/lorem.write.txt');
+var compressed = fs.createWriteStream(__dirname + '/lorem.write.txt.gz  ');
 
+var gzip = zlib.createGzip();
 
 
 // pipe
 //   @param: dest = destination to which to pipe the data coming from the readable stream
 //   @return: dest = so we can chain pipes.
-//   in the code 'src' is the readable stream.
-readable.pipe(writable);
+//   in the code 'src' is the readable stream.  
+readable.pipe(gzip).pipe(compressed);
+
+
+
+
 
 
  
