@@ -1,0 +1,25 @@
+{
+  "name": "nodejs-test-app",
+  "version": "1.0.0",
+  "description": "NodeJS Test App",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ee7klt/Node-Alicea.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ee7klt/Node-Alicea/issues"
+  },
+  "homepage": "https://github.com/ee7klt/Node-Alicea#readme",
+  "dependencies": {
+    "moment": "^2.13.0"
+  },
+  "devDependencies": {
+    "jasmine-node": "^1.14.5"
+  }
+}
