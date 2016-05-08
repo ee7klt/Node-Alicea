@@ -11,7 +11,12 @@ var port = process.env.PORT || 3000;
 app.get('/', function(req, res) {
     res.send('<html><body>  <h2> This is the express train to JS! </h2> </body>  </html>'
     )
-})
+});
+
+app.get('/kyoto/:id', function(req,res) {
+     res.send(`<html><body><h2> Vamos ${req.params.id}-chan! </h2></body></html>`
+    )
+});
 
 app.get('/api', function(req, res){
     res.json({
