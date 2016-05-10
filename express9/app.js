@@ -33,7 +33,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/kyoto/:site', function(req,res) {
-    res.render('sites', {SITE: req.params.site});
+    res.render('sites', {SITE: req.params.site, Qstr: req.query.color});
 });
 
 app.get('/api', function(req, res,next){
