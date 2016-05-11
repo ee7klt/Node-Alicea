@@ -4,6 +4,7 @@ var bodyParser = require('body-parser');
 var app = express();
 var port = process.env.PORT || 3000;
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
+var jsonParser = bodyParser.json();
 // use ejs.co as the template engine
 app.set('view engine', 'ejs');
 
@@ -41,6 +42,11 @@ app.post('/person', urlencodedParser, function(req,res) {
    res.send(`hello ${req.body.username}!`);
    console.log(req.body); 
 });
+
+app.post('/personjson', jsonParser, function(req, res) {
+    res.send(`here is your json data: ${req.body}`)
+    console.log(req.body);
+})
 
 app.get('/api', function(req, res,next){
     res.json({
