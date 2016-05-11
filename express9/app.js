@@ -1,8 +1,9 @@
 // will look in node_modules for express since it's not built in to node
 var express = require('express');
+var bodyParser = require('body-parser');
 var app = express();
 var port = process.env.PORT || 3000;
-
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
 // use ejs.co as the template engine
 app.set('view engine', 'ejs');
 
@@ -18,7 +19,7 @@ app.set('view engine', 'ejs');
 app.use('/assets', express.static(__dirname + '/public') );
 app.use('/', function(req,res,next) {
     console.log('Request url: ' + req.url);
-    console.log('__dirname is '+ __dirname);
+   // console.log('__dirname is '+ __dirname);
   next();
 });
 
@@ -34,6 +35,11 @@ app.get('/', function(req, res) {
 
 app.get('/kyoto/:site', function(req,res) {
     res.render('sites', {SITE: req.params.site, Qstr: req.query.color});
+});
+
+app.post('/person', urlencodedParser, function(req,res) {
+   res.send(`hello ${req.body.username}!`);
+   console.log(req.body); 
 });
 
 app.get('/api', function(req, res,next){
