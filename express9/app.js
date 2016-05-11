@@ -43,10 +43,23 @@ app.post('/person', urlencodedParser, function(req,res) {
    console.log(req.body); 
 });
 
-app.post('/personjson', jsonParser, function(req, res) {
-    res.send(`here is your json data: ${req.body}`)
-    console.log(req.body);
+
+app.get('/api/person/:id', jsonParser, function(req, res) {
+    // get data from dB
+    res.json({username: 'user', password: 'pass'});
 })
+
+
+app.post('/api/person', jsonParser, function(req, res) {
+    // save to dB
+})
+
+app.delete('/api/person/:id', function(req,res) {
+    // delete from database
+})
+
+
+
 
 app.get('/api', function(req, res,next){
     res.json({
