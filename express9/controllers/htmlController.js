@@ -5,36 +5,36 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false });
 var jsonParser = bodyParser.json();
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://test:test@ds023052.mlab.com:23052/addressbook')
+// mongoose.connect('mongodb://test:test@ds023052.mlab.com:23052/addressbook');
 
-var Schema = mongoose.Schema;
-var personSchema = new Schema({
-    firstname: String,
-    lastname: String,
-    address: String
-})
+// var Schema = mongoose.Schema;
+// var personSchema = new Schema({
+//     firstname: String,
+//     lastname: String,
+//     address: String
+// })
 
-var Person = mongoose.model('Person', personSchema);
+// var Person = mongoose.model('Person', personSchema);
 
-var pedro = Person({
-    firstname: 'Pedro',
-    lastname: 'Muchacho',
-    address: 'Villa de Pontifica'
-});
+// var pedro = Person({
+//     firstname: 'Pedro',
+//     lastname: 'Muchacho',
+//     address: 'Villa de Pontifica'
+// });
 
-pedro.save(function(err) {
-    if (err) throw err;
-    console.log('person saved!');
-})
+// pedro.save(function(err) {
+//     if (err) throw err;
+//     console.log('person saved!');
+// })
 
 module.exports = function(app) {
     app.use('/', function(req,res,next) {
     console.log('Request url: ' + req.url);
     
-    Person.find({}, function(err, users) {
-        if (err) throw err;
-        console.log(users);
-    })
+    // Person.find({}, function(err, users) {
+    //     if (err) throw err;
+    //     console.log(users);
+    // })
    // console.log('__dirname is '+ __dirname);
    
 
