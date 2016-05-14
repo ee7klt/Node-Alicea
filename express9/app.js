@@ -1,10 +1,18 @@
 // will look in node_modules for express since it's not built in to node
 var express = require('express');
-var bodyParser = require('body-parser');
+var mysql = require('mysql');
+var connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'me',
+    password: 'secret',
+    database: 'my_db'
+})
+
+connection.connect();
+
 var app = express();
 var port = process.env.PORT || 3000;
-var urlencodedParser = bodyParser.urlencoded({ extended: false });
-var jsonParser = bodyParser.json();
+
 var apiController = require('./controllers/apiController.js');
 var htmlController = require('./controllers/htmlController.js');
 
