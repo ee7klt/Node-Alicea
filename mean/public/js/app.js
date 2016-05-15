@@ -18,4 +18,17 @@ function ctrlFunc() {
     // vm = view model = model that i want for this particular screen
     this.message = 'Hello';
     // now messaged is attached to vm and can be accessed from index.
+    this.gente = [
+        {
+            nombre: 'Pablo'
+        },
+        {
+            nombre: 'Estrella'
+        },
+        {
+            nombre: 'Reina' 
+        }
+    ]
+    
+    
 }
