@@ -10,7 +10,7 @@ app.use('/assets', express.static(__dirname + '/public'));
 
 app.set('view engine', 'ejs');
 
-mongoose.connect(config.getDbConnectionString());
+mongoose.connect('mongodb://localhost/todos');
 setupController(app);
 
 app.listen(port);
